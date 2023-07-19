@@ -9,7 +9,7 @@ class S3Service:
 
     def upload_file(self, file: BinaryIO, user_id: str, filename: str):
         bucket = "zhannurkhan04"
-        filekey = f"shanyraks/{user_id}/{filename}"
+        filekey = f"beine/{user_id}/{filename}"
 
         self.s3.upload_fileobj(file, bucket, filekey)
 
@@ -25,6 +25,6 @@ class S3Service:
     def delete_file(self, user_id: str, filename: str):
         bucket = "zhannurkhan04"
         print(filename.split('/')[-1])
-        filekey = f"shanyraks/{user_id}/{filename.split('/')[-1]}"
+        filekey = f"beine/{user_id}/{filename.split('/')[-1]}"
 
         self.s3.delete_object(Bucket=bucket, Key=filekey)

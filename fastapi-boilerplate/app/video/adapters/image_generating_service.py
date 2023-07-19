@@ -20,7 +20,7 @@ class ImageService:
             data = {
                 'model': 'stable-diffusion-v1-5',
                 'prompt': json_d[f'prompt{i + 1}'],
-                'negative_prompt': 'Disfigured, cartoon, blurry, bad anatomy, bad proportions, blurry, cloned face, cropped, deformed, dehydrated, disfigured, duplicate, error, extra arms, extra fingers, extra legs, extra limbs, fused fingers, gross proportions, jpeg artifacts, long neck, low quality, lowres, malformed limbs, missing arms, missing legs, morbid, mutated hands, mutation, mutilated, out of frame, poorly drawn face, poorly drawn hands, signature, text, too many fingers, ugly, username, watermark, worst quality, Distorted colors, Pixelated images, Misaligned elements, Cluttered layout, Hard-to-read fonts, Outdated design',
+                'negative_prompt': "Disfigured, cartoon, blurry, bad anatomy, bad proportions, cloned face, cropped, deformed, dehydrated, disfigured, duplicate, error, extra arms, extra fingers, extra legs, extra limbs, fused fingers, gross proportions, jpeg artifacts, long neck, low quality, lowres, malformed limbs, missing arms, missing legs, morbid, mutated hands, mutation, mutilated, out of frame, poorly drawn face, poorly drawn hands, signature, text, too many fingers, ugly, username, watermark, worst quality, distorted colors",
                 'width': 512,
                 'height': 512,
                 'steps': 25,
