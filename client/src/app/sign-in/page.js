@@ -1,5 +1,7 @@
 'use client'
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useRouter } from 'next/navigation';
+
 import Link from 'next/link'
 
 
@@ -8,6 +10,7 @@ const Page = () => {
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const router = useRouter();
 
     async function authorizeUser() {
         try {
@@ -24,7 +27,8 @@ const Page = () => {
           
           console.log('Authorization successful. Access Token:', response.data.access_token);
           if(response.status == 200) {
-            
+            localStorage.setItem('token', response.data.access_token)
+            router.push('/main');
           }
         } catch (error) {
           console.error('Authorization error:', error.message);

@@ -1,5 +1,6 @@
 'use client'
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useRouter } from 'next/navigation';
 import Link from 'next/link'
 
 
@@ -11,7 +12,7 @@ const Page = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [confPassword, setConfPassword] = useState('');
-
+    const router = useRouter();
 
     async function registerUser() {
         if(password != '' && password === confPassword){
@@ -24,6 +25,10 @@ const Page = () => {
           const response = await axios.post('http://localhost:8000/auth/users', userData);
       
           console.log('User registered successfully:', response.data);
+
+          if(response.status == 200) {
+            router.push('/sign-in')
+          }
         } catch (error) {
           console.error('Error registering user:', error.message);
         }
