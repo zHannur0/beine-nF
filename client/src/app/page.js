@@ -9,10 +9,11 @@ const Page = () => {
 
   const router = useRouter();
 
-  if (localStorage.getItem("token")) {
-    router.push("/main");
+  if (typeof window !== 'undefined'){
+    if (localStorage.getItem("token")) {
+      router.push("/main");
+    }
   }
-
   function navigate() {
     router.push('/sign-in');
   }
